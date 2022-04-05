@@ -1,4 +1,4 @@
-const anteojos = [
+const sunglasses = [
     {
         marca: "Ray Ban",
         modelo: "Erika",
@@ -92,3 +92,5 @@ const anteojos = [
 
 
 ]
+
+module.exports = sunglasses
