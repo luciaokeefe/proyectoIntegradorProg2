@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var controller = require('../controllers/searchResults');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

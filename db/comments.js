@@ -6,4 +6,4 @@ const comments = [
     }
 ]
 
-module.exports = comments
+module.exports = comments;
