@@ -1,17 +1,18 @@
 const array = require("./sunglasses.js")
 
 function getAll() {
-    return array;   
-}
+    return array;
+};
+
 
 function findProductById(id) {
-        for (let i = 0; i < array.length; i++) {
-            if (array[i].id == id) {
-                return array[i];
-            }
-        
-        return undefined;
+    const acumulador = [];
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].id == id) {
+            acumulador.push(array[i]);
+        } else { }
     }
+    return acumulador;
 }
 
 
