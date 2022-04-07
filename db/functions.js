@@ -1,4 +1,5 @@
 const array = require("./sunglasses.js")
+const users = require("./users")
 
 function getAll() {
     return array;
@@ -15,10 +16,14 @@ function findProductById(id) {
     return acumulador;
 }
 
+function getAllUsers() {
+    return users;
+};
 
 
 module.exports = {
     getAll,
     findProductById,
+    getAllUsers,
 
 }
