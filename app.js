@@ -10,7 +10,6 @@ var headerLogueadoRouter = require('./routes/headerLogueado')
 var loginRouter = require('./routes/login');
 var productAddRouter = require('./routes/productAdd');
 var productRouter = require('./routes/product');
-var profileEditRouter = require('./routes/profileEdit');
 var registerRouter = require('./routes/register');
 var searchResultsRouter = require('./routes/searchResults');
 
@@ -32,7 +31,6 @@ app.use('/headerLogueado', headerLogueadoRouter);
 app.use('/login', loginRouter);
 app.use('/productAdd', productAddRouter);
 app.use('/product', productRouter);
-app.use('/profileEdit', profileEditRouter);
 app.use('/register', registerRouter);
 app.use('/searchResults', searchResultsRouter);
 

@@ -1,9 +1,12 @@
-var index = require('../db/sunglasses');
+var functions = require('../db/functions');
 
 const controllers = { 
-    index: function(req,res) {
-        res.render('index', {index: index})
+    indexAll: function(req, res) {
+        const results = functions.getAll()
+        res.send(results)
     }
-}
 
+  
+}
+console.log(controllers)
 module.exports = controllers;
