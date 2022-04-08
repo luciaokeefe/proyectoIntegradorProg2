@@ -1,3 +1,4 @@
+const { indexAll } = require("../controllers/index.js");
 const array = require("./sunglasses.js")
 const users = require("./users")
 
@@ -14,16 +15,17 @@ function findProductById(id) {
         } else { }
     }
     return acumulador;
-}
+};
 
 function getAllUsers() {
     return users;
 };
 
 
+
+
 module.exports = {
     getAll,
     findProductById,
     getAllUsers,
-
 }
