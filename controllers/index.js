@@ -7,14 +7,16 @@ const controllers = {
     },
 
     login: function (req, res) {
-        res.render('login', { title: 'Login' });
+        res.render('partials/login', { title: 'Login' });
     },
 
     register: function (req, res) {
-        res.render('register', { title: 'Register' });
+        res.render('partials/register', { title: 'Register' });
     },
 
 
 }
 console.log(controllers)
 module.exports = controllers;
+
+
