@@ -476,6 +476,11 @@ textarea.form-input {
   color: #fff;
 }
 
+.images {
+  object-fit: cover;
+  width:100%;
+  height: 250px;
+}
 
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {

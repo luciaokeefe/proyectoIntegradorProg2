@@ -10,7 +10,7 @@ const sunglasses = [
 
     {
         marca: "Ray Ban",
-        modelo: "Scuderia Ferrari Collection",
+        modelo: "Ferrari",
         colorDelArmazon: "Petróleo",
         colorDelLente: "Celeste",
         id: 2,
@@ -23,7 +23,7 @@ const sunglasses = [
         colorDelArmazon: "Negro",
         colorDelLente: "Gris",
         id: 3,
-        img: "/images/products/id1.png"
+        img: "/images/products/id3.png"
     },
 
     {
@@ -87,7 +87,7 @@ const sunglasses = [
         colorDelArmazon: "Negro",
         colorDelLente: "Naranja",
         id: 10,
-        img: "/images/products/id1.png"
+        img: "/images/products/id10.png"
     },
 
 

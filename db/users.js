@@ -1,12 +1,12 @@
 const users = [
     {
-        nombre: "Lady",
-        apellido: "Gaga",
-        nombreUsuario: "LadyG",
+        name: "Lady",
+        surname: "Gaga",
+        username: "LadyG",
         email: "ladygaga@gmail.com",
-        telefono: "+52 822 671 1831",
-        fechaDeNacimiento: "28-03-1986",
-        genero: "femenino"
+        phone: "+52 822 671 1831",
+        birthDate: "28-03-1986",
+        gender: "femenino"
 
     }
 ]

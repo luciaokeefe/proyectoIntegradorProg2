@@ -1,9 +1,10 @@
 var functions = require('../db/functions');
 
+
 const controllers = {
     indexAll: function (req, res) {
         const results = functions.getAll()
-        res.render('index')
+        res.render('index', { sunglasses: results})
     },
 
     login: function (req, res) {
