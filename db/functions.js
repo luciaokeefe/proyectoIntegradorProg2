@@ -1,4 +1,3 @@
-const { indexAll } = require("../controllers/index.js");
 const array = require("./sunglasses.js")
 const users = require("./users")
 
@@ -16,6 +15,8 @@ function findProductById(id) {
     }
     return acumulador;
 };
+
+console.log(findProductById())
 
 function getAllUsers() {
     return users;

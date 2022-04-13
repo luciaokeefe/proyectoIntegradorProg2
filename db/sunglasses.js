@@ -1,11 +1,11 @@
-const sunglasses = [
+const products = [
     {
         marca: "Ray Ban",
         modelo: "Erika",
         colorDelArmazon: "Carey",
         colorDelLente: "Marrón degradé",
         id: 1,
-        img: "/images/products/id1.png", //supuestamente esta bien
+        img: "/images/products/id1.png", 
     },
 
     {
@@ -93,4 +93,4 @@ const sunglasses = [
 
 ]
 
-module.exports = sunglasses
+module.exports = products

@@ -1,9 +1,9 @@
-<%- include('./partials/header.ejs') %>
+<%- include('./partials/headerLogueado.ejs') %>
 
 
 	<!-- Banner -->
 	<div class="banner">
-		<img src="images/img-home-banner.jpg" alt="Banner de ofertas">
+		<img src="images/img-home-banner.png" alt="Banner de ofertas">
 	</div>
 	<!-- /Banner -->
 
@@ -16,17 +16,17 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 
-			<% for( let i=0; i < sunglasses.length; i++ ) { %>
+			<% for( let i=0; i < products.length; i++ ) { %>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
 						<a href="/product/<%= i+1 %> ">
 							<figure class="product-box_image">
-								<img class= "images" src="<%= sunglasses[i].img %> " alt="imagen de producto">
+								<img class= "images" src="<%= products[i].img %> " alt="imagen de producto">
 							</figure>
 							<article class="product-box_data">
-								<h2> <%= sunglasses[i].modelo %> </h2>
-								<p>Color del armazon: <%= sunglasses[i].colorDelArmazon %></p>
-								<p>Color del lente: <%= sunglasses[i].colorDelLente %></p>
+								<h2> <%= products[i].modelo %> </h2>
+								<p>Color del armazon: <%= products[i].colorDelArmazon %></p>
+								<p>Color del lente: <%= products[i].colorDelLente %></p>
 								<p>Comentarios: 12</p>
 							</article>
 						</a>
