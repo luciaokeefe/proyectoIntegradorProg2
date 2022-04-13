@@ -6,7 +6,6 @@ const controllers = {
         const results = functions.getAll()
         res.render('index', { products: results})
     },
-
     login: function (req, res) {
         res.render('login');
     },

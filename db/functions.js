@@ -1,5 +1,5 @@
 const array = require("./sunglasses.js")
-const users = require("./users")
+const users = require("./users.js")
 
 function getAll() {
     return array;

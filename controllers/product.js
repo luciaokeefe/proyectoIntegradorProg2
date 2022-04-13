@@ -6,7 +6,7 @@ const controllers = {
         res.render('product', {products: data.products[req.params.id -1]})
     },
     add: function (req, res) {
-        res.render('/productAdd') 
+        res.render('productAdd') 
     }
 
     

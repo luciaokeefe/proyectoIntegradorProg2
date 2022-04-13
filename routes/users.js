@@ -5,7 +5,7 @@ var controllers = require("../controllers/users")
 router.get('/', controllers.users);
 // router.get('/edit', controllers.users);
 
-router.get('/me', controllers.profile);
+router.get('/me', controllers.users);
 router.get('/me/edit', controllers.edit);
 
 
