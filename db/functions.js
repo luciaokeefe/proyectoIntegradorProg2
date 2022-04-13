@@ -16,7 +16,6 @@ function findProductById(id) {
     return acumulador;
 };
 
-console.log(findProductById())
 
 function getAllUsers() {
     return users;

@@ -5,10 +5,18 @@ const controllers = {
         const results = functions.getAllUsers()
         res.send(results)
     },
+    profile: function (req, res) {
+        res.render('profile');
+    },
+    edit: function (req, res){
+        res.render('profileEdit');
+
+    }
+
 
     // editUser: function (req, res) {
     //     res.send ()
     // }
 
 }
-module.exports = controllers
+module.exports = controllers; 

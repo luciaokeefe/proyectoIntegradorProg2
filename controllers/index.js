@@ -10,14 +10,15 @@ const controllers = {
     login: function (req, res) {
         res.render('login');
     },
-
     register: function (req, res) {
         res.render('register');
     },
+    results: function (req, res) {
+        res.render('searchResults');
 
-
+    }
 }
-console.log(controllers)
+
 module.exports = controllers;
 
 
