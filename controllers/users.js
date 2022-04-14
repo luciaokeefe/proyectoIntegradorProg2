@@ -1,15 +1,14 @@
-var functions = require("../db/functions")
+var user = require("../db/users")
 
 const controllers = {
-    users: function(req, res) {
-        const results = functions.getAllUsers()
-        res.render('profile', { users: results})
+    users: function (req, res) {
+        res.render('profile', {user: user})
     },
-    edit: function (req, res){
+    edit: function (req, res) {
         res.render('profileEdit');
-
-    }
+    },
+    
 
 
 }
-module.exports = controllers; 
+module.exports = controllers;

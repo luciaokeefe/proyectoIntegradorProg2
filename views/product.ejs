@@ -1,9 +1,9 @@
-<%- include('./partials/headerLogueado.ejs') %> 
+<%- include('./partials/header.ejs') %> 
 	
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title"><%= products[].modelo %> </h2> 
+			<h2 class="products-title"><%= product.modelo %> </h2> 
 			<p class="product-detail-description">
 				<a href="/productAdd">Editar</a>
 			</p>
@@ -12,20 +12,22 @@
 				<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="<%= products[i].img %> " alt="" class="product-detail-img">
+					<img src="<%= product.img %> " alt="" class="product-detail-img">
 					<p class="product-detail-description">
-						<p>Color del armazon: <%= products[i].colorDelArmazon %></p>
-						<p>Color del lente: <%= products[i].colorDelLente %></p></p>
+						<p>Marca: <%= product.marca %></p>
+						<p>Modelo: <%= product.modelo %></p>
+						<p>Color del armazon: <%= product.colorDelArmazon %></p>
+						<p>Color del lente: <%= product.colorDelLente %></p></p>
 				</article>
 			
 				<div class="col-12 col-lg-4">
 					<section class="comments">
 						<article>
-							<img src=" <%= users[i].img %> " alt="">
+							<img src=" <%= user.profilePhoto %> " alt="">
 							<div class="data">
 								<p class="user">
-								<strong> <a href="/profile">Nombre usuario: <%= users[i].username %></a> </strong>
-								<p>Comentario: <%= comments[i].comment %></p></p>
+								<strong> <a href="/profile">Nombre usuario: <%= user.username %></a> </strong>
+								<p>Comentario: <%= user.comment %></p></p>
 							</div>
 						</article>
 					</section>
