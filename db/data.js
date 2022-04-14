@@ -1,4 +1,5 @@
-const products = [
+const data = {
+    products: [
     {
         marca: "Ray Ban",
         modelo: "Erika",
@@ -88,9 +89,27 @@ const products = [
         colorDelLente: "Naranja",
         id: 10,
         img: "/images/products/id10.png"
-    },
+    }
+],
+users: {
+        name: "Lady",
+        surname: "Gaga",
+        username: "LadyG",
+        email: "ladygaga@gmail.com",
+        phone: "+52 822 671 1831",
+        birthDate: "28-03-1986",
+        gender: "femenino",
+        dni: 55823765,
+        profilePhoto: "/images/comments/ladyGProfilePicture.png"
+
+}, 
+
+comments: {
+    username: "LadyG",
+    comment: "Hey, love argentinians taste on sunglasses!",
+    profilePhoto: "/images/comments/ladyGProfilePicture.png"
+}
+}
 
 
-]
-
-module.exports = products
+module.exports = data

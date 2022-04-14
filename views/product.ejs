@@ -1,4 +1,4 @@
-<%- include('./partials/header.ejs') %> 
+<%- include('./partials/headerLogueado.ejs') %> 
 	
 	<!-- product detail -->
 	<div class="container products-wrapper">
@@ -23,10 +23,10 @@
 				<div class="col-12 col-lg-4">
 					<section class="comments">
 						<article>
-							<img src=" <%= user.profilePhoto %> " alt="">
+							<img src=" <%= comment.profilePhoto %> " alt="">
 							<div class="data">
 								<p class="user">
-								<strong> <a href="/profile">Nombre usuario: <%= user.username %></a> </strong>
+								<strong> <a href="/profile"><%= comment.username %></a> </strong>
 								<p>Comentario: <%= user.comment %></p></p>
 							</div>
 						</article>
