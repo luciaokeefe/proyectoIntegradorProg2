@@ -1,10 +1,10 @@
-var data = require('../db/data');
-
+var data = require('../db/sunglasses');
+var users = require('../db/users')
 
 
 const controllers = {
     show: function (req, res) {
-        res.render('product', {product: data.products[req.params.id -1], user: data.users, comment: data.comments})
+        res.render('product', {product: data[req.params.id -1], user: users})
     },
     add: function (req, res) {
         res.render('productAdd') 
