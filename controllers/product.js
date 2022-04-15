@@ -1,6 +1,9 @@
 var data = require('../db/data');
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 34c37c5907f5176a639fbe48b466d12f166476db
 
 const controllers = {
     show: function (req, res) {

@@ -7,9 +7,7 @@ const controllers = {
     },
     edit: function (req, res) {
         res.render('profileEdit');
-    },
+    }
     
-
-
 }
 module.exports = controllers;

@@ -2,7 +2,7 @@ const array = require("./data.js")
 
 
 function getAll() {
-    return array;
+    return array
 };
 
 function getAllUsers() {
@@ -12,5 +12,5 @@ function getAllUsers() {
 
 module.exports = {
     getAll,
-    getAllUsers,
+    getAllUsers
 }
