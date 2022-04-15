@@ -1,10 +1,10 @@
 var functions = require('../db/functions');
+var data = require('../db/data');
 
 
 const controllers = {
     indexAll: function (req, res) {
-        const results = functions.getAll()
-        res.render('index', { products: results})
+        res.render('index', { products: data.products})
     },
     login: function (req, res) {
         res.render('login');
