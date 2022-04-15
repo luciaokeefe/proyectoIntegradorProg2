@@ -11,5 +11,5 @@ function getAllUsers() {
 
 module.exports = {
     getAll,
-    getAllUsers,
+    getAllUsers
 }
