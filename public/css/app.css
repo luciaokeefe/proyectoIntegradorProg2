@@ -10,7 +10,7 @@
   --gray: #666666;
   --light-gray: #ebebeb;
   --green: #39b54a;
-  --base-font-family: 'Roboto', sans-serif
+  --base-font-family: 'Raleway', sans-serif
 }
 
 
@@ -30,6 +30,7 @@ body {
   font-family: var(--base-font-family);
   font-weight: 300;
   background-color: var(--light-gray);
+  
 }
 
 ul,
@@ -69,6 +70,7 @@ hr {
 .main-header {
   padding: 15px 0;
   background-color: var(--yellow);
+  
 }
 
 .main-header_home-link,
@@ -169,9 +171,9 @@ hr {
 }
 
 .products-title {
-  font-size: 2.4em;
+  font-size: 90px;
   font-weight: 400;
-  color: var(--gray);
+  color: #0000ff;
 }
 
 .product-box {
@@ -257,6 +259,9 @@ hr {
   box-shadow: 0 0 5px var(--green);
 }
 
+header i{
+  color: #0000ff;
+}
 /*====== Footer ======*/
 .main-footer {
   background-color: #ffffff;
@@ -269,7 +274,7 @@ hr {
 }
 
 .footer-data i {
-  color: var(--light-blue);
+  color: #0000ff;
   font-size: 3.5em;
 }
 
@@ -302,6 +307,7 @@ hr {
   background-color: #ffffff;
   border-radius: 8px;
   overflow: hidden;
+  
 }
 
 .product-detail-img {
@@ -314,6 +320,7 @@ hr {
   border-right: 1px solid var(--light-gray);
   padding: 15px;
   /* height: 100%; */
+  font-size:xx-large;
 }
 
 .product-detail-title {
@@ -398,6 +405,7 @@ hr {
 }
 .comments {
   padding: 30px 15px 15px 0;
+  font-size: small;
 }
 .comments article{
   margin-bottom: 7.5px;
@@ -483,7 +491,7 @@ textarea.form-input {
 }
 
 a {
-font-family: Raleway;
+font-family: 'Raleway', sans-serif;
 
 }
 
