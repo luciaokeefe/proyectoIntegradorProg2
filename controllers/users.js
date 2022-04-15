@@ -1,8 +1,8 @@
-var data = require("../db/data")
+var user = require("../db/users")
 
 const controllers = {
     users: function (req, res) {
-        res.render('profile', {user: data.users, products: data.products})
+        res.render('profile', {user: user})
     },
     edit: function (req, res) {
         res.render('profileEdit');

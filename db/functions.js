@@ -1,11 +1,12 @@
-const array = require("./data.js")
+const array = require("./sunglasses.js")
+const users = require("./users.js")
 
 function getAll() {
-    return array.products;
+    return array;
 };
 
 function getAllUsers() {
-    return array.users;
+    return users;
 };
 
 
