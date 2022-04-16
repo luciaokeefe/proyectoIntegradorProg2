@@ -1,4 +1,3 @@
-var functions = require('../db/functions');
 var data = require('../db/data');
 
 
