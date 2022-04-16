@@ -171,7 +171,7 @@ hr {
 }
 
 .products-title {
-  font-size: 90px;
+  font-size: 60px;
   font-weight: 400;
   color: #0000ff;
 }
@@ -320,7 +320,7 @@ header i{
   border-right: 1px solid var(--light-gray);
   padding: 15px;
   /* height: 100%; */
-  font-size:xx-large;
+  font-size:x-large;
 }
 
 .product-detail-title {
