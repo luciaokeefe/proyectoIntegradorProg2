@@ -3,8 +3,15 @@ var data = require('../db/data');
 
 const controllers = {
     indexAll: function (req, res) {
-        res.render('index', { products: data.products})
+        db.products.findAll()
+            .then(function (products) {
+                res.render ('index', { products });
+            })    
+            .catch(function (error) {
+                    res.send(error)
+                });
     },
+
     login: function (req, res) {
         res.render('login');
     },
@@ -18,5 +25,4 @@ const controllers = {
 }
 
 module.exports = controllers;
-
 

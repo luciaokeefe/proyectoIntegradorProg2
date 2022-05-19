@@ -1,8 +1,15 @@
 var data = require('../db/data');
+var db = require('../database/models');
 
 const controllers = {
     show: function (req, res) {
-        res.render('product', {product: data.products[req.params.id -1], user: data.users, comment: data.comments})
+    db.products.findByPk(req.params.id)
+        .then(function (products) {
+            res.render('product', {products: products[req.params.id -1], user: users, comment: comments}) 
+        })
+        .catch(function (error) {
+            res.send(error)
+        })
     },
     add: function (req, res) {
         res.render('productAdd') 
@@ -10,3 +17,5 @@ const controllers = {
 }
 
 module.exports = controllers;
+
+
