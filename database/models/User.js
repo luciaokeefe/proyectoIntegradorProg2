@@ -1,0 +1,28 @@
+module.exports = function (sequelize, dataTypes) {
+    const cols = {
+        id: {
+            autoIncrement: true,
+            primaryKey: true,
+            type: dataTypes.INTEGER
+        },
+        name: { type: dataTypes.STRING },
+        surname: { type: dataTypes.STRING },
+        username: { type: dataTypes.STRING },
+        email: { type: dataTypes.STRING },
+        phone: { type: dataTypes.STRING },
+        birthdate: { type: dataTypes.DATE },
+        gender: { type: dataTypes.STRING },
+        DNI: { type: dataTypes.STRING },
+        profilePhoto: { type: dataTypes.STRING }
+       
+    }
+
+    const configs = {
+        tableName: 'users',
+        timestamps: false
+    }
+
+    const Product = sequelize.define('User', cols, configs);
+
+    return User;
+}
