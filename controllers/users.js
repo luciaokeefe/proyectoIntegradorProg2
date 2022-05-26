@@ -1,4 +1,4 @@
-const data = require("../db/data");
+var db = require("../database/models");
 
 
 const controllers = {
