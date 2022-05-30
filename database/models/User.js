@@ -22,7 +22,7 @@ module.exports = function (sequelize, dataTypes) {
         timestamps: false
     }
 
-    const Product = sequelize.define('User', cols, configs);
+    const User = sequelize.define('User', cols, configs);
 
     return User;
 }
