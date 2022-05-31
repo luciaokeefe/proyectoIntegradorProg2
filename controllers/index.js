@@ -11,8 +11,7 @@ const controllers = {
             .catch(function (error) {
                     res.send(error)
                 })
-                db.User.findAll()
-                .then((data)=>res-send(data))
+
     },
 
     login: function (req, res) {
