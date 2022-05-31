@@ -7,36 +7,39 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> 
-				<form>
+				<form method="post">
 					<div class="mb-3">
 						<label for="name" class="form-label">Nombre completo</label>
-						<input type="text" class="form-control" id="name">
+						<input type="text" class="form-control" id="name" name="name">
 					</div>
 					<div class="mb-3">
 						<label for="surname" class="form-label">Apellido</label>
-						<input type="text" class="form-control" id="surname">
+						<input type="text" class="form-control" id="surname" name="surname">
 					</div>
 					<div class="mb-3">
 						<label for="username" class="form-label">Nombre de usuario</label>
-						<input type="text" class="form-control" id="username">
+						<input type="text" class="form-control" id="username" name="username">
 					</div>
-					
+					<div class="mb-3">
+						<label for="email" class="form-label">Email</label>
+						<input type="email" class="form-control" id="email" name="email">
+					</div>
 					<div class="mb-3">
 						<label for="phone" class="form-label">Teléfono celular</label>
-						<input type="text" class="form-control" id="phone">
+						<input type="text" class="form-control" id="phone" name="phone">
 					</div>
 					<div class="mb-3">
 						<label for="gender" class="form-label">Género</label>
-						<input type="text" class="form-control" id="gender">
+						<input type="text" class="form-control" id="gender" name="gender">
 					</div>
 					<div class="mb-3">
 						<label for="birthdate" class="form-label">Fecha de nacimiento</label>
-						<input type="date" class="form-control" id="birthdate">
+						<input type="date" class="form-control" id="birthdate" name="birthdate">
 					</div>
 					
 					<div class="mb-3">
-						<label for="exampleInputPassword1" class="form-label">Contraseña</label>
-						<input type="password" class="form-control" id="exampleInputPassword1">
+						<label for="contraseña" class="form-label">Contraseña</label>
+						<input type="password" class="form-control" id="contraseña" name="contraseña">
 					</div>
 					<button type="submit" class="btn btn-primary">Enviar</button>
 				  </form>
