@@ -4,13 +4,13 @@ var db = require("../database/models");
 
 const controllers = {
     indexAll: function (req, res) {
-       /* db.Products.findAll()
+        db.Product.findAll()
             .then(function (products) {
                 res.render ('index', { products });
             })    
             .catch(function (error) {
                     res.send(error)
-                });*/
+                })
                 db.User.findAll()
                 .then((data)=>res-send(data))
     },
