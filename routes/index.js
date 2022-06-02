@@ -6,6 +6,7 @@ var controllers = require('../controllers/index');
 router.get('/', controllers.indexAll);
 
 router.get('/login', controllers.login);
+router.post('/login', controllers.access);
 
 router.get('/register', controllers.register);
 router.post('/register', controllers.store);

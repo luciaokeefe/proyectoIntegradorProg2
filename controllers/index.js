@@ -16,17 +16,25 @@ const controllers = {
     login: function (req, res) {
         res.render('login');
     },
+
     register: function (req, res) {
         res.render('register');
     },
 
     store: function(req, res) {
         if (!req.body.email) { throw Error('Not email provided.') }
-        const hashedPassword = hasher.hashSync(req.body.password, 10);
+        const hashedPassword = hasher.hashSync(req.body.Password, 10);
         db.User.create({
+                name: req.body.name,
+                surname: req.body.surname,
                 username: req.body.username,
-                password: hashedPassword,
                 email: req.body.email,
+                phone: req.body.phone,
+                birthdate: req.body.birthdate,
+                gender: req.body.gender,
+                DNI: req.body.DNI,
+                profilephoto: req.body.profilephoto,
+                Password: hashedPassword,    
             })
             .then(function () {
                 res.redirect('/');

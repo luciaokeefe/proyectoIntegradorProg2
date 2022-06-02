@@ -13,7 +13,8 @@ module.exports = function (sequelize, dataTypes) {
         birthdate: { type: dataTypes.DATE },
         gender: { type: dataTypes.STRING },
         DNI: { type: dataTypes.STRING },
-        profilePhoto: { type: dataTypes.STRING }
+        profilePhoto: { type: dataTypes.STRING },
+        Password: { type: dataTypes.STRING }
        
     }
 
