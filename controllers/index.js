@@ -17,6 +17,25 @@ const controllers = {
         res.render('login');
     },
 
+    access: function(req, res, next) {
+        db.User.findOne({ where: { email: req.body.mail }})
+            .then(function(user) {
+                if (!user) throw Error('User not found.')
+                if (hasher.compareSync(req.body.password, user.Password)) {
+                    req.session.user = user;
+                    if (req.body.rememberme) {
+                        res.cookie('userId', user.id, { maxAge: 1000 * 60 * 60 * 7 })
+                    }
+                    res.redirect('/');
+                } else {
+                    throw Error('Invalid credentials.')
+                }
+            })
+            .catch(function (error) {
+                next(error)
+            })
+    },
+
     register: function (req, res) {
         res.render('register');
     },
