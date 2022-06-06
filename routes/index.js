@@ -8,6 +8,11 @@ router.get('/', controllers.indexAll);
 router.get('/login', controllers.login);
 router.post('/login', controllers.access);
 
+
+router.get('/logout', controllers.logout);
+
+
+
 router.get('/register', controllers.register);
 router.post('/register', controllers.store);
 

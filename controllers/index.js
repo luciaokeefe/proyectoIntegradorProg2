@@ -36,11 +36,30 @@ const controllers = {
             })
     },
 
+    logout: function (req, res, next) {
+        req.session.user = null;
+        res.clearCookie('userId');
+        res.redirect('/')
+    },
+
     register: function (req, res) {
         res.render('register');
     },
 
     store: function(req, res) {
+        try{
+            if(!req.body.username) {throw Error ('Campo de nombre de usuario vacío.') }
+            if(!req.body.email) {throw Error ('Campo de email vacío.') }
+            if(req.body.Password.length < 3) {throw Error ('Contraseña muy corta.') }
+            if(!req.body.Password) {throw Error ('Campo de contraseña vacío') }
+            if(!req.body.name) {throw Error ('Campo de nombre completo vacío') }
+            if(!req.body.surname) {throw Error ('Campo de apellido vacío') }
+            if(!req.body.DNI) {throw Error ('Campo de DNI vacío') }
+
+        }catch(error){
+            res.render('register', {error: error.message});
+            return;
+        }
         if (!req.body.email) { throw Error('Not email provided.') }
         const hashedPassword = hasher.hashSync(req.body.Password, 10);
         db.User.create({
