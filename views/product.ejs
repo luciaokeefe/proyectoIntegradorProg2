@@ -12,7 +12,7 @@
 				<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="<%= product.IMG %>" alt="" class="product-detail-img">
+					<img src="<%= product.IMG %>" alt="imagen de producto" class="product-detail-img">
 					<p class="product-detail-description">
 						<p>Marca: <%= product.marca %></p>
 						<p>Modelo: <%= product.modelo %></p>
@@ -20,23 +20,7 @@
 						<p>Color del lente: <%= product.colorDelLente %></p></p>
 				</article>
 			
-				<div class="col-12 col-lg-4">
-					<section class="comments">
-						<article>
-							<img src=" <%= user.profilePhoto %> " alt="">
-							<div class="data">
-								<p class="user">
-								<strong> <a href="/users/me"><%= user.username %></a> </strong>
-								<p>Comentario: <%= user.comment %></p></p>
-							</div>
-						</article>
-					</section>
-					<form class="form" >
-						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
-						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-					</form>
-					<hr>
-				</div>
+				
 			</div>
 		</div>
 				

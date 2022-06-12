@@ -2,17 +2,21 @@ var db = require('../database/models');
 
 const controllers = {
     show: function (req, res) {
-    db.products.findByPk(req.params.id)
-        .then(function (products) {
-            res.render('product', {products: products[req.params.id -1], user: users, comment: comments}) 
+    db.Product.findByPk(req.params.id)
+        .then(function (product) {
+            res.render('product', {product}) 
         })
         .catch(function (error) {
             res.send(error)
         })
     },
-    add: function (req, res) {
-        res.render('productAdd') 
-    }
+    add: function(req, res) {
+        if (!req.session.user) { 
+            throw Error('Not authorized.')
+        }
+        res.render('productAdd');
+    },
+
 }
 
 module.exports = controllers;

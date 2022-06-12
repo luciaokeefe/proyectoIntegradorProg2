@@ -10,6 +10,8 @@ module.exports = function (sequelize, dataTypes) {
         colorDelArmazon: { type: dataTypes.STRING },
         colorDelLente: { type: dataTypes.STRING },
         IMG: { type: dataTypes.STRING },
+        createdAt: { type: dataTypes.DATE },
+
        
     }
 

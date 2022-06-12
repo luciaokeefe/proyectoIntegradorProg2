@@ -7,6 +7,13 @@
 			<div class="col-12">
 				<h2 class="products-title">Agregar productos</h2>
 			</div>
+			<div class="container mt-4">
+				<% if (locals.error) { %>
+					<div class="alert alert-danger" role="alert">
+						<%= error %>
+					</div>
+					<% } %>
+			</div>
 			<!-- Show the "ultimos" products -->
 			<form class="form-label">
 
