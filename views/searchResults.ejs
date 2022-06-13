@@ -1,13 +1,39 @@
-<%- include('./partials/header.ejs') %> 
+<%- include('./partials/header.ejs') %>
 
-	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
 				<h2 class="products-title">Resultados de búsqueda</h2>
+				<h3> <%= product.modelo %> </h3>
 			</div>
-			<!-- Show the "ultimos" products -->
+
+			<% if (locals.error) {%> 
+				<div class = "alert alert-secondary" role="alert"> 
+					<%= error %> 
+				</div>
+			<% }%> 
 			
+			<% for( let i=0; i < product.length; i++ ) { %>
+				<div class="col-12 col-sm-6 col-lg-3">
+					<section class="product-box">
+						<a href="/product/<%= i+1 %> ">
+							<figure class="product-box_image">
+								<img class= "images" src="<%= product[i].IMG %>" alt="imagen de producto">
+							</figure>
+							<article class="product-box_data">
+								<h2> <%= product[i].modelo %> </h2>
+								<p>Color del armazon: <%= product[i].colorDelArmazon %></p>
+								<p>Color del lente: <%= product[i].colorDelLente %></p>
+								<p>Comentarios: 12</p>
+							</article>
+						</a>
+					</section>
+				</div>
+				<% } %>
+
+		</div>
+	</div>
 
 
-			<%- include('./partials/footer.ejs') %> 
+
+			<%- include('./partials/footer.ejs') %>
