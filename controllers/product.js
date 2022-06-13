@@ -26,7 +26,7 @@ const controllers = {
             })
     },
     update: function(req, res) {
-        if (req.file) req.body.cover = (req.file.path).replace('public', '');
+        if (req.file) req.body.IMG = (req.file.path).replace('public', '');
         db.Product.update(req.body, { where: { id: req.params.id } })
             .then(function(product) {
                 res.redirect('/')
@@ -40,7 +40,7 @@ const controllers = {
             return res.render('productAdd', { error: 'Not authorized.' });
         }
         req.body.user_id = req.session.user.id;
-        if (req.file) req.body.cover = (req.file.path).replace('public', '');
+        if (req.file) req.body.IMG = (req.file.path).replace('public', '');
         db.Product.create(req.body)
             .then(function() {
                 res.redirect('/')

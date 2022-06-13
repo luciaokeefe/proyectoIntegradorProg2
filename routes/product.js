@@ -11,7 +11,7 @@ router.post('/productAdd', upload.single('IMG'), controllers.store);
 router.get("/:id", controllers.show); 
 
 router.get('/:id/edit', controllers.edit);
-router.post('/:id/edit', upload.single('cover'), controllers.update);
+router.post('/:id/edit', upload.single('IMG'), controllers.update);
 
 
 
