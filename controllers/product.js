@@ -16,6 +16,39 @@ const controllers = {
         }
         res.render('productAdd');
     },
+    edit: function(req, res) {
+        db.Product.findByPk(req.params.id)
+            .then(function (product) {
+                res.render('productAdd', { product });
+            })
+            .catch(function (error) {
+                res.send(error);
+            })
+    },
+    update: function(req, res) {
+        if (req.file) req.body.cover = (req.file.path).replace('public', '');
+        db.Product.update(req.body, { where: { id: req.params.id } })
+            .then(function(product) {
+                res.redirect('/')
+            })
+            .catch(function(error) {
+                res.send(error);
+            })
+    },
+    store: function(req, res) {
+        if (!req.session.user) { 
+            return res.render('productAdd', { error: 'Not authorized.' });
+        }
+        req.body.user_id = req.session.user.id;
+        if (req.file) req.body.cover = (req.file.path).replace('public', '');
+        db.Product.create(req.body)
+            .then(function() {
+                res.redirect('/')
+            })
+            .catch(function(error) {
+                res.send(error);
+            })
+    },
 
 }
 

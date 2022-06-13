@@ -1,0 +1,25 @@
+<%- include('./partials/header.ejs') %> 
+<h1>Editar producto</h1>
+<form method="post" enctype="multipart/form-data">
+    <label>Marca</label>
+    <input type="text" class="form-control" name="author" id="author" value="<%= product.marca %>" />
+    
+    <label class="form-label">Modelo</label>
+    <input type="text" class="form-control" name="modelo" id="modelo" value="<%= product.modelo %>" />
+    
+    <label>Color del armazón</label>
+    <input type="file" class="form-control" name="colorDelArmazon" id="colorDelArmazon"
+        value="<%= product.colorDelArmazon %>" />
+    
+    <label>Color del lente</label>
+    <input type="file" class="form-control" name="colorDelLente" id="colorDelLente" value="<%= product.colorDelLente %>" />
+    
+    <label>Foto del producto</label>
+    <input type="file" class="form-control" name="IMG" id="IMG" value="<%= product.IMG %>" />
+    
+    <label>Fecha de modificación</label>
+    <input type="date" class="form-control" name="createdAt" id="createdAt" value="<%= product.createdAt %>" />
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<%- include('./partials/footer.ejs') %> 
