@@ -8,6 +8,7 @@ module.exports = function (sequelize, dataTypes) {
         username: { type: dataTypes.STRING },
         profilePhoto: { type: dataTypes.STRING },
         comment: { type: dataTypes.STRING },
+        product_id:  { type: dataTypes.INTEGER }
        
     }
 
