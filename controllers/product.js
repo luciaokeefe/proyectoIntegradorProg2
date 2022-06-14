@@ -2,7 +2,7 @@ var db = require('../database/models');
 
 const controllers = {
     show: function (req, res) {
-    db.Product.findByPk(req.params.id)
+    db.Product.findByPk(req.params.id, { include: [ { association: 'comment' } ] })
         .then(function (product) {
             res.render('product', {product}) 
         })

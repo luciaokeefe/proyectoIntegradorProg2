@@ -19,5 +19,13 @@ module.exports = function (sequelize, dataTypes) {
 
     const Comment = sequelize.define('Comment', cols, configs);
 
+    Comment.associate = function(models){
+        Comment.belongsTo(models.Product, {
+            as:'product',
+            foreignKey: 'product_id'
+         })
+    }
+
+
     return Comment;
 }
