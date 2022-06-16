@@ -6,6 +6,7 @@ var op = db.Sequelize.Op;
 const controllers = {
     indexAll: function (req, res) {
         db.Product.findAll({
+
             order: [['id', 'DESC']],
 
         } )

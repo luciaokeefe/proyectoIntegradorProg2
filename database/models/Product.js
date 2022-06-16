@@ -11,6 +11,7 @@ module.exports = function (sequelize, dataTypes) {
         colorDelLente: { type: dataTypes.STRING },
         IMG: { type: dataTypes.STRING },
         createdAt: { type: dataTypes.DATE },
+        user_id: {type:dataTypes.INTEGER}
 
        
     }
@@ -21,6 +22,22 @@ module.exports = function (sequelize, dataTypes) {
     }
 
     const Product = sequelize.define('Product', cols, configs);
+
+    Product.associate = function(models){
+        Product.hasMany(models.Comment, {
+            as:'comment',
+            foreignKey: 'product_id'
+         })
+        Product.belongsTo(models.User,{
+            as: 'owner',
+            foreignKey: 'user_id' 
+    })
+
+
+
+    
+    }
+
 
     return Product;
 }
