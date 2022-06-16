@@ -50,6 +50,23 @@ const controllers = {
             })
     },
 
+    comment: function(req, res) {
+        if (!req.session.user) { 
+            throw Error('Not authorized.')
+        }
+        // Set user from session user
+        req.body.user_id = req.session.user.id;
+        // Set book from url params
+        req.body.product_id = req.params.id;
+        db.comment.create(req.body)
+            .then(function() {
+                res.redirect('/product' + req.params.id)
+            })
+            .catch(function(error) {
+                res.send(error);
+            })
+    },
+
 }
 
 module.exports = controllers;
