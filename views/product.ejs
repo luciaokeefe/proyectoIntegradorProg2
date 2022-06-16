@@ -28,48 +28,33 @@
 				</article>
 
 			</div>
-		</div>
-		<div class="col-12 col-lg-4">
-			<section class="comments">
-				<h2>Comentarios</h2>
-				<% for (let i=0; i < product.comments.length; i++) { %>
-					<div class="card mb-2">
-						<div class="card-body">
-							<b>
-								<%= product.comments[i].user.username %>
-							</b></br>
-							<%= product.comments[i].content %>
+			<div class="col-12 col-lg-4">
+				<section class="comments">
+					<h2>Comentarios</h2>
+					<% for (let i=0; i < product.comment.length; i++) { %>
+						<div class="card mb-2">
+							<div class="card-body">
+								<b>
+									<%= product.comments[i].user.username %>
+								</b></br>
+								<%= product.comments[i].comment %>
+							</div>
 						</div>
-					</div>
-					<% } %>
-			</section>
-			<form class="form" method="post" action="/products/detail/<%= product.id %>">
-				<input class="form-input" type="text" value="" placeholder="Agregar comentario" name=" comment"
-					id=" comment">
-				<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-			</form>
-			<hr>
+						<% } %>
+				</section>
+				<form class="form" method="post" action="/product/<%= product.id %>">
+					<input class="form-input" type="text" value="" placeholder="Agregar comentario" name=" comment"
+						id=" comment">
+					<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+				</form>
+				<hr>
+			</div>
+
 		</div>
 
 	</div>
 
- <div class="col-12 col-lg-4">
-					<section class="comments">
-						<article>
-							<img src=" <%= user.profilePhoto %> " alt="">
-							<div class="data">
-								<p class="user">
-								<strong> <a href="/users/me"><%= user.username %></a> </strong>
-								<p>Comentario: <%= user.comment %></p></p>
-							</div>
-						</article>
-					</section>
-					<form class="form" >
-						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
-						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-					</form>
-					<hr>
-				</div> 
+
 
 
 	<%- include('./partials/footer.ejs') %>

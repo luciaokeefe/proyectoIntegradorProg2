@@ -58,7 +58,7 @@ const controllers = {
         req.body.user_id = req.session.user.id;
         // Set book from url params
         req.body.product_id = req.params.id;
-        db.comment.create(req.body)
+        db.Comment.create(req.body)
             .then(function() {
                 res.redirect('/product' + req.params.id)
             })

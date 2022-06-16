@@ -8,7 +8,8 @@ module.exports = function (sequelize, dataTypes) {
         username: { type: dataTypes.STRING },
         profilePhoto: { type: dataTypes.STRING },
         comment: { type: dataTypes.STRING },
-        product_id:  { type: dataTypes.INTEGER }
+        product_id:  { type: dataTypes.INTEGER },
+        user_id:  { type: dataTypes.INTEGER }
        
     }
 
@@ -23,7 +24,13 @@ module.exports = function (sequelize, dataTypes) {
         Comment.belongsTo(models.Product, {
             as:'product',
             foreignKey: 'product_id'
+         }),
+         
+         Comment.belongsTo(models.Product, {
+            as:'user',
+            foreignKey: 'user_id'
          })
+
     }
 
 
