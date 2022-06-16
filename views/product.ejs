@@ -35,22 +35,26 @@
 						<div class="card mb-2">
 							<div class="card-body">
 								<b>
-									<%= product.comments[i].user.username %>
-								</b></br>
-								<%= product.comments[i].comment %>
+									<%= product.comment[i].user?.username %> <!-- si no hay lo que está a la izq que no se ejecute lo que esta a la derecha -->
+								</b>
+								<%= product.comment[i].comment %>
 							</div>
 						</div>
 						<% } %>
 				</section>
-				<form class="form" method="post" action="/product/<%= product.id %>">
-					<input class="form-input" type="text" value="" placeholder="Agregar comentario" name=" comment"
+				<form class="form" method="post" action="/product/<%= product.id %>/comment">
+					<input class="form-input" type="text" value="" placeholder="Agregar comentario" name= "comment"
 						id=" comment">
 					<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 				</form>
 				<hr>
 			</div>
-
 		</div>
+		<% if (locals.user && user.id==product.user_id) { %>
+			<form action="/product/<%= product.id %>/delete" method="post">
+			  <input class="btn btn-danger" type="submit" value="Borrar">
+			</form>
+			<% } %>
 
 	</div>
 

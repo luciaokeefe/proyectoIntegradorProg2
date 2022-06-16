@@ -2,7 +2,7 @@ var db = require('../database/models');
 
 const controllers = {
     show: function (req, res) {
-    db.Product.findByPk(req.params.id, { include: [ { association: 'comment' } ] })
+    db.Product.findByPk(req.params.id, { include:  { all: true, nested: true}})
         .then(function (product) {
             res.render('product', {product}) 
         })
@@ -60,12 +60,24 @@ const controllers = {
         req.body.product_id = req.params.id;
         db.Comment.create(req.body)
             .then(function() {
-                res.redirect('/product' + req.params.id)
+                res.redirect('/product/' + req.params.id)
             })
             .catch(function(error) {
                 res.send(error);
             })
     },
+    delete: function(req, res) {
+        if (!req.session.user) {
+            throw Error('Not authorized.')
+        }
+        db.Product.destroy({ where: { id: req.params.id } })
+            .then(function() {
+                res.redirect('/')
+            })
+            .catch(function(error) {
+                res.send(error);
+            })
+    }
 
 }
 
