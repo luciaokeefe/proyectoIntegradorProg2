@@ -23,6 +23,16 @@ const controllers = {
                 res.send(error)
             });
     },
+
+    edit: function(req, res) {
+        db.User.findByPk(req.params.id)
+             .then(function (user) {
+                 res.render('profileEdit', { user });
+             })
+             .catch(function (error) {
+                 res.send(error);
+             })
+     },
     
 }
 module.exports = controllers;

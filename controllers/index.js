@@ -24,7 +24,7 @@ const controllers = {
     access: function (req, res, next) {
         db.User.findOne({ where: { email: req.body.mail } })
             .then(function (user) {
-                if (!user) throw Error('User not found.')
+                if (!user) throw Error('No se encontró al usuario.')
                 if (hasher.compareSync(req.body.password, user.Password)) {
                     req.session.user = user;
                     if (req.body.rememberme) {
@@ -32,7 +32,7 @@ const controllers = {
                     }
                     res.redirect('/');
                 } else {
-                    throw Error('Invalid credentials.')
+                    throw Error('Información incorrecta')
                 }
             })
             .catch(function (error) {
