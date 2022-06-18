@@ -19,7 +19,7 @@ const controllers = {
     edit: function(req, res) {
         db.Product.findByPk(req.params.id)
             .then(function (product) {
-                res.render('productAdd', { product });
+                res.render('productEdit', { product });
             })
             .catch(function (error) {
                 res.send(error);
@@ -29,7 +29,7 @@ const controllers = {
         if (req.file) req.body.IMG = (req.file.path).replace('public', '');
         db.Product.update(req.body, { where: { id: req.params.id } })
             .then(function(product) {
-                res.redirect('/')
+                res.redirect('/product/' + req.params.id)
             })
             .catch(function(error) {
                 res.send(error);
