@@ -6,19 +6,16 @@
 			<h2 class="products-title">
 				<%= product.modelo %>
 			</h2>
-			
-	
-			  <p class="product-detail-description">
-				<a href="/product/<%= product.id %>/edit">Editar</a> 
-			</p>
-			
-			
 
+			
 			<% if (locals.user && user.id == product.user_id) { %>
+				<p class="product-detail-description">
+					<a href="/product/<%= product.id %>/edit">Editar</a> 
+				</p>
 				<form action="/product/<%= product.id %>/delete" method="post">
-					<button type="submit" class="btn btn-primary">Borrar</button>
+					<input class="btn btn-primary" type="submit" value="Borrar">
 				  </form>
-		
+				  
 			  <% } %>
 			  
 		</div>

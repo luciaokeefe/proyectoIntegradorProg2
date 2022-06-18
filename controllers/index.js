@@ -50,7 +50,7 @@ const controllers = {
         res.render('register');
     },
 
-    store: function (req, res) {
+    store: async function (req, res) {
         try {
             if (!req.body.username) { throw Error('Campo de nombre de usuario vacío.') }
             if (!req.body.email) { throw Error('Campo de email vacío.') }
@@ -58,13 +58,17 @@ const controllers = {
             if (!req.body.Password) { throw Error('Campo de contraseña vacío') }
             if (!req.body.name) { throw Error('Campo de nombre completo vacío') }
             if (!req.body.surname) { throw Error('Campo de apellido vacío') }
-            if (!req.body.DNI) { throw Error('Campo de DNI vacío') }
+            if (!req.body.DNI) { throw Error('Campo de DNI vacío') }  
+            const email = await db.User.findOne({ where: { email: req.body.email } })
+            if (email) { throw Error('Email ya está en uso.') } 
+
+            const user = db.User.findOne({ where: { username: req.body.username } })
+            if (user) { throw Error('Nombre de usuario ya está en uso.') }
 
         } catch (error) {
             res.render('register', { error: error.message });
             return;
         }
-        if (!req.body.email) { throw Error('Not email provided.') }
         const hashedPassword = hasher.hashSync(req.body.Password, 10);
         db.User.create({
             name: req.body.name,
@@ -79,7 +83,7 @@ const controllers = {
             Password: hashedPassword,
         })
             .then(function () {
-                res.redirect('/');
+                res.redirect('/login/');
             })
             .catch(function (error) {
                 res.send(error);
