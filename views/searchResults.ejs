@@ -22,9 +22,8 @@
 							</figure>
 							<article class="product-box_data">
 								<h2> <%= product[i].modelo %> </h2>
-								<p>Color del armazon: <%= product[i].colorDelArmazon %></p>
-								<p>Color del lente: <%= product[i].colorDelLente %></p>
-								<p>Comentarios: 12</p>
+								<p>Marca: <%= product[i].marca %></p>
+								<p>Publicado por: <%= product[i].owner?.username %> <!-- si no hay lo que está a la izq que no se ejecute lo que esta a la derecha --></p>
 							</article>
 						</a>
 					</section>

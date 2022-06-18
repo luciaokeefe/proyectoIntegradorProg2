@@ -22,9 +22,10 @@
 							</figure>
 							<article class="product-box_data">
 								<h2> <%= products[i].modelo %> </h2>
-								<p>Color del armazon: <%= products[i].colorDelArmazon %></p>
-								<p>Color del lente: <%= products[i].colorDelLente %></p>
-								<p>Comentarios: 12</p>
+								<p>Marca: <%= products[i].marca %></p>
+								<p>Publicado por: <%= products[i].owner?.username %> </p> <!-- si no hay lo que está a la izq que no se ejecute lo que esta a la derecha -->
+								
+								<%=console.log(products[i].owner?.username)%> 	
 							</article>
 						</a>
 					</section>
@@ -51,7 +52,8 @@
 								<h2> <%= products[i].modelo %> </h2>
 								<p>Color del armazon: <%= products[i].colorDelArmazon %></p>
 								<p>Color del lente: <%= products[i].colorDelLente %></p>
-								<p>Comentarios: 12</p>
+								
+								
 							</article>
 						</a>
 					</section>
