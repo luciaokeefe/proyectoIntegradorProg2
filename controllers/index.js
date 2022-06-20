@@ -63,8 +63,10 @@ const controllers = {
             const email = await db.User.findOne({ where: { email: req.body.email } })
             if (email) { throw Error('Email ya está en uso.') } 
 
-            const user = db.User.findOne({ where: { username: req.body.username } })
+            const user = await db.User.findOne({ where: { username: req.body.username } })
             if (user) { throw Error('Nombre de usuario ya está en uso.') }
+
+            if (req.file) req.body.profilePhoto = (req.file.path).replace('public', '');
 
         } catch (error) {
             res.render('register', { error: error.message });
@@ -80,7 +82,7 @@ const controllers = {
             birthdate: req.body.birthdate,
             gender: req.body.gender,
             DNI: req.body.DNI,
-            profilephoto: req.body.profilephoto,
+            profilePhoto: req.body.profilePhoto,
             Password: hashedPassword,
         })
             .then(function () {

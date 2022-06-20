@@ -2,9 +2,6 @@ var db = require("../database/models");
 
 
 const controllers = {
-    edit: function (req, res) {
-        res.render('profileEdit');
-    },
     myProfile: function(req, res) {
 
         db.User.findByPk(req.session.user.id, { include: [ { association: 'products' } ] })
@@ -35,5 +32,15 @@ const controllers = {
              })
      },
     
+     update: function (req, res) {
+        if (req.file) req.body.profilePhoto = (req.file.path).replace('public', '');
+        db.User.update(req.body, { where: { id: req.params.id } })
+            .then(function (user) {
+                res.redirect('/users/me')
+            })
+            .catch(function (error) {
+                res.send(error);
+            })
+    },
 }
 module.exports = controllers;

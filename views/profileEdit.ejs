@@ -7,30 +7,34 @@
 				<h2 class="products-title">Editar mi perfil</h2>
 			</div>
 			<main class="form">
-				<form action= "/" class="form-label">
+				<form class="form-label" method="post" enctype="multipart/form-data">
 				   <div>
 					<label for="Email" class="form-label">Email</label>
-					<input type="email" id="Email" class="form-input" placeholder="ladygaga@gmail.com" >
+					<input type="email" id="Email" name="Email" class="form-input" placeholder="ejemplo@gmail.com" >
 				  </div>
 				  <div>
 					<label for="username" class="form-label">Nombre de usuario</label>
-					<input type="text" id="username" class="form-input" placeholder="Lady Gaga">
+					<input type="text" id="username" name="username" class="form-input" placeholder="nombre de usuario">
 				  </div>
 				  <div>
 					<label for="password" class="form-label">Contraseña</label>
-					<input type="password" id="password" class="form-input">
+					<input type="password" id="password" name="password" class="form-input">
 				  </div>
 				  <div>
 					<label for="birthday" class="form-label">Fecha de nacimiento</label>
-					<input type="date" id="birthday"class="form-input" >
+					<input type="date" id="birthday" name="birthday" class="form-input" >
 				  </div>
 				  <div>
-					<label for="phone" class="form-label">DNI</label>
-					<input type="number" id="DNI" class="form-input">
+					<label for="dni" class="form-label">DNI</label>
+					<input type="number" id="DNI" name="DNI" class="form-input">
 				  </div>
 				  <div>
-					<label for="phone" class="form-label">Foto de perfil</label>
-					<input type="file" id="profilePh" class="form-input">
+					<label for="phone" class="form-label">TELEFONO</label>
+					<input type="number" id="phone" name="phone" class="form-input">
+				  </div>
+				  <div>
+					<label for="profilePhoto" class="form-label">Foto de perfil</label>
+					<input type="file" id="profilePhoto" name="profilePhoto" class="form-input">
 				  </div>
 				  <button class="buy-now-button" type="submit"> guardar</button>
 				</form>
