@@ -8,8 +8,8 @@ module.exports = function (sequelize, dataTypes) {
         comment: { type: dataTypes.STRING },
         product_id:  { type: dataTypes.INTEGER },
         user_id:  { type: dataTypes.INTEGER },
-        createdAt: { type: dataTypes.DATE }
-       
+        createdAt: { type: dataTypes.DATE },
+ 
     }
 
     const configs = {
