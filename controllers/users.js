@@ -6,6 +6,8 @@ const controllers = {
         res.render('profileEdit');
     },
     myProfile: function(req, res) {
+
+
         db.User.findByPk(req.session.user.id, { include: [ { association: 'products' } ] })
             .then(function (user) {
                 res.render('profile', { user });

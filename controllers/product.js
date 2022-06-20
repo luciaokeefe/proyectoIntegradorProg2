@@ -1,5 +1,7 @@
 var db = require('../database/models');
 
+
+
 const controllers = {
     show: function (req, res) {
         db.Product.findByPk(req.params.id, { include: { all: true, nested: true } })
@@ -17,19 +19,21 @@ const controllers = {
         res.render('productAdd');
     },
     edit: function (req, res) {
-        if (req.body.user_id !== req.session.user) {
-            throw Error('Not authorized.');
-        }
-        else {
+        if (req.session.user) {
             db.Product.findByPk(req.params.id)
-                .then(function (product) {
+            .then(function (product) {
+                if (product.user_id == req.session.user.id) {
                     res.render('productEdit', { product });
-                })
-                .catch(function (error) {
-                    res.send(error);
-                })
-        } 
-        
+                } else {
+                    throw Error('Not authorized.');
+                }
+            })
+            .catch(function (error) {
+                res.send(error);
+            })          
+        } else {
+            throw Error('Please login to access this page');
+        }
     },
     update: function (req, res) {
         if (req.file) req.body.IMG = (req.file.path).replace('public', '');

@@ -2,11 +2,12 @@ var db = require("../database/models");
 var hasher = require("bcryptjs");
 var op = db.Sequelize.Op;
 
-
 const controllers = {
     indexAll: function (req, res) {
         db.Product.findAll({
-            order: [['id', 'DESC']],
+            
+            order: [['id', 'DESC']], 
+            include: { all: true, nested: true}
 
         } )
             .then(function (products) {
@@ -98,6 +99,7 @@ const controllers = {
                     { marca: { [op.like]: "%" + req.query.criteria + "%" } }
                 ]
             },
+            include: { all: true, nested: true }
         })
 
             .then(function (product) {

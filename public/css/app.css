@@ -328,10 +328,14 @@ header i{
   font-size: 2.8em;
 }
 
+.product-detail p{ /* agregado  */
+  margin-left: 15px;
+}
+
 .product-detail-description {
   padding: 15px 15px 15px 40px;
   font-size: 1.8em;
-  line-height: 1.5;
+  line-height: 1.5; 
 }
 
 .product-detail-price {
