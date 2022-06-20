@@ -11,7 +11,8 @@ module.exports = function (sequelize, dataTypes) {
         colorDelLente: { type: dataTypes.STRING },
         IMG: { type: dataTypes.STRING },
         createdAt: { type: dataTypes.DATE },
-        user_id: {type:dataTypes.INTEGER}
+        user_id: {type:dataTypes.INTEGER},
+        updatedAt: { type: dataTypes.DATE }
 
        
     }
