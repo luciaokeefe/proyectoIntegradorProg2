@@ -14,7 +14,7 @@ const controllers = {
     },
     add: function (req, res) {
         if (!req.session.user) {
-            throw Error('Not authorized.')
+            throw Error('No autorizado.')
         }
         res.render('productAdd');
     },
@@ -25,14 +25,14 @@ const controllers = {
                 if (product.user_id == req.session.user.id) {
                     res.render('productEdit', { product });
                 } else {
-                    throw Error('Not authorized.');
+                    throw Error('No autorizado.');
                 }
             })
             .catch(function (error) {
                 res.send(error);
             })          
         } else {
-            throw Error('Please login to access this page');
+            throw Error('Por favor loguearse para acceder');
         }
     },
     update: function (req, res) {
@@ -47,7 +47,7 @@ const controllers = {
     },
     store: function (req, res) {
         if (!req.session.user) {
-            return res.render('productAdd', { error: 'Not authorized.' });
+            return res.render('productAdd', { error: 'No autorizado.' });
         }
         req.body.user_id = req.session.user.id;
         if (req.file) req.body.IMG = (req.file.path).replace('public', '');
@@ -84,7 +84,7 @@ const controllers = {
 
     delete: function (req, res) {
         if (!req.session.user) {
-            throw Error('Not authorized.')
+            throw Error('No autorizado.')
         }
         db.Product.destroy({ where: { id: req.params.id } })
             .then(function () {

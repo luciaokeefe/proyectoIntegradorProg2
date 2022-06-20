@@ -32,9 +32,6 @@ module.exports = function (sequelize, dataTypes) {
             as: 'owner',
             foreignKey: 'user_id' 
     })
-
-
-
     
     }
 
