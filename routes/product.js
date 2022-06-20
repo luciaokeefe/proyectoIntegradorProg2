@@ -8,6 +8,8 @@ const upload = multer({ dest: 'public/images/uploads' });
 router.get("/productAdd", controllers.add);
 router.post('/productAdd', upload.single('IMG'), controllers.store);
 
+
+
 router.get("/:id", controllers.show);
 router.post('/:id/comment', controllers.comment); 
 

@@ -52,6 +52,10 @@ const controllers = {
     },
 
     store: async function (req, res) {
+        if (req.file) req.body.profilePhoto = (req.file.path).replace('public', '');
+
+        
+
         try {
             if (!req.body.username) { throw Error('Campo de nombre de usuario vacío.') }
             if (!req.body.email) { throw Error('Campo de email vacío.') }
@@ -66,8 +70,7 @@ const controllers = {
             const user = await db.User.findOne({ where: { username: req.body.username } })
             if (user) { throw Error('Nombre de usuario ya está en uso.') }
 
-            if (req.file) req.body.profilePhoto = (req.file.path).replace('public', '');
-
+            
         } catch (error) {
             res.render('register', { error: error.message });
             return;
@@ -91,6 +94,8 @@ const controllers = {
             .catch(function (error) {
                 res.send(error);
             })
+            
+            
     },
 
     results: function (req, res, next) {
