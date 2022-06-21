@@ -34,36 +34,7 @@
 		</div>
 	</div>
 
-	<!-- Más comentados -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Más comentados</h2>
-			</div>
-			<!-- Show the "ultimos" products -->
-			<% for( let i=0; i < products.length; i++ ) { %>
-				<div class="col-12 col-sm-6 col-lg-3">
-					<section class="product-box">
-						<a href="/product/<%= i+1 %> ">
-							<figure class="product-box_image">
-								<img class= "images" src="<%= products[i].IMG %> " alt="imagen de producto">
-							</figure>
-							<article class="product-box_data">
-								<h2> <%= products[i].modelo %> </h2>
-								<p>Color del armazon: <%= products[i].colorDelArmazon %></p>
-								<p>Color del lente: <%= products[i].colorDelLente %></p>
-								
-								
-							</article>
-						</a>
-					</section>
-				</div>
-				<% } %>
-		</div>
-	</div>
 
-	
-	<!-- /Más comentados -->
 
 
 	<%- include('./partials/footer.ejs') %>

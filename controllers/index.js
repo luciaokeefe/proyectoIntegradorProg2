@@ -103,7 +103,9 @@ const controllers = {
             where: {
                 [op.or]: [
                     { modelo: { [op.like]: "%" + req.query.criteria + "%" } },
-                    { marca: { [op.like]: "%" + req.query.criteria + "%" } }
+                    { marca: { [op.like]: "%" + req.query.criteria + "%" } },
+                    { colorDelArmazon: { [op.like]: "%" + req.query.criteria + "%" } },
+                    { colorDelLente: { [op.like]: "%" + req.query.criteria + "%" } }
                 ]
             },
             include: { all: true, nested: true }

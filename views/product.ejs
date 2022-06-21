@@ -8,16 +8,15 @@
 			</h2>
 
 			
-			<% if (locals.user && user.id == product.user_id) { %>
+			<% if (locals.me && me.id == product.user_id) { %>
 				<p class="product-detail-description">
 					<a href="/product/<%= product.id %>/edit">Editar</a> 
 				</p>
 				<form action="/product/<%= product.id %>/delete" method="post">
 					<input class="btn btn-primary" type="submit" value="Borrar">
 				  </form>
-				  
 			  <% } %>
-			  
+ 
 		</div>
 
 		<div class="product-detail">
@@ -25,7 +24,7 @@
 				<article class="col-12 col-lg-8 product-detail-info">
 					<img src="<%= product.IMG %>" alt="imagen de producto" class="product-detail-img">
 					<p class="product-detail-description">
-						<p>Publicado por: <a href="/products/profile/<%= product.user_id %>"><%= product.owner?.username %></a> <!-- si no hay lo que está a la izq que no se ejecute lo que esta a la derecha -->
+						<p>Publicado por: <a href="/users/<%= product.user_id %>"><%= product.owner?.username %></a> <!-- si no hay lo que está a la izq que no se ejecute lo que esta a la derecha -->
 						</p>
 
 					<p>Marca: <%= product.marca %>
@@ -46,8 +45,8 @@
 					<% for (let i=0; i < product.comment.length; i++) { %>
 						<div class="card mb-2">
 							<div class="card-body">
-								<b>
-									<%= product.comment[i].user?.username %> <!-- si no hay lo que está a la izq que no se ejecute lo que esta a la derecha -->
+								<b> <a href="/users/<%= product.comment[i].user.id %>">
+									<%= product.comment[i].user?.username %> </a> <!-- si no hay lo que está a la izq que no se ejecute lo que esta a la derecha -->
 								</b> 
 								<%= product.comment[i].comment %>
 							</div>
