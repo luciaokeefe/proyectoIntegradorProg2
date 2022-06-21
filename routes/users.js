@@ -9,7 +9,7 @@ router.get('/me', controllers.myProfile);
 router.get('/me/edit', controllers.edit);
 router.post('/me/edit', upload.single('profilePhoto'), controllers.update);
 
-router.get('/me', controllers.profile);
+router.get('/:id', controllers.profile);
 
 
 module.exports = router;

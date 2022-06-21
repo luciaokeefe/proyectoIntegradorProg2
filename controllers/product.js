@@ -21,16 +21,16 @@ const controllers = {
     edit: function (req, res) {
         if (req.session.user) {
             db.Product.findByPk(req.params.id)
-            .then(function (product) {
-                if (product.user_id == req.session.user.id) {
-                    res.render('productEdit', { product });
-                } else {
-                    throw Error('No autorizado.');
-                }
-            })
-            .catch(function (error) {
-                res.send(error);
-            })          
+                .then(function (product) {
+                    if (product.user_id == req.session.user.id) {
+                        res.render('productEdit', { product });
+                    } else {
+                        throw Error('No autorizado.');
+                    }
+                })
+                .catch(function (error) {
+                    res.send(error);
+                })
         } else {
             throw Error('Por favor loguearse para acceder');
         }
@@ -63,10 +63,11 @@ const controllers = {
     comment: function (req, res) {
 
         if (!req.session.user) {
+
             return res.redirect('/login/');
         }
         else {
-            // Set user from session user
+             // Set user from session user
             req.body.user_id = req.session.user.id;
 
             // Set product from url params
@@ -74,12 +75,16 @@ const controllers = {
 
             db.Comment.create(req.body)
                 .then(function () {
+
                     res.redirect('/product/' + req.params.id)
                 })
+
                 .catch(function (error) {
                     res.send(error);
                 })
+
         }
+
     },
 
     delete: function (req, res) {

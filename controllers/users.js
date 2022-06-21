@@ -4,7 +4,7 @@ var db = require("../database/models");
 const controllers = {
     myProfile: function(req, res) {
 
-        db.User.findByPk(req.session.user.id, { include: [ { association: 'products' } ] })
+        db.User.findByPk(req.session.user.id,  { include: { all: true, nested: true } })
             .then(function (user) {
                 res.render('profile', { user });
             })
@@ -23,7 +23,7 @@ const controllers = {
     },
 
     edit: function(req, res) {
-        db.User.findByPk(req.params.id)
+        db.User.findByPk(req.session.user.id)
              .then(function (user) {
                  res.render('profileEdit', { user });
              })
@@ -34,7 +34,7 @@ const controllers = {
     
      update: function (req, res) {
         if (req.file) req.body.profilePhoto = (req.file.path).replace('public', '');
-        db.User.update(req.body, { where: { id: req.params.id } })
+        db.User.update(req.body, { where: { id: req.session.user.id } })
             .then(function (user) {
                 res.redirect('/users/me')
             })

@@ -18,7 +18,7 @@
 					<div class="data-container col-6">
 						<div class="d-flex align-items-center ">
 							<h1 class="main-title">
-								<%= user.username %>
+								
 									<% if (locals.user && user.id== user.id) { %>
 										<a href="/users/me/edit">
 											<i class="fas fa-cog"></i>
@@ -54,9 +54,9 @@
 					  
 					  <h2><%= user.products[i].modelo %></h2>
 					  <p>Marca: <%= user.products[i].marca %></p>
-					  <p>Publicado por: <%= user.products[i].owner?.username %></p>
+					  <p>Publicado por: <%= user.username %></p>
 
-					  <% console.log(user.products[i]) %> 
+					   
 
 					  <p><a class="btn btn-secondary" href="/product/<%= user.products[i].id %>">Ver detalles »</a></p>
 					</div>
