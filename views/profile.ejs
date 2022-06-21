@@ -7,7 +7,7 @@
 				<div class="d-flex align-items-center ">
 					<h1>
 						<%= user.username %>
-							<img src="<%= user.profilePhoto %>" style="max-width: 200px;" />
+							<img src="<%= user.profilePhoto %>" class="foto-perfil" />
 					</h1>
 					<h2>
 						<ul>
@@ -41,8 +41,8 @@
 
 						</ul>
 					</h2>
-					<div>
-						<ul class="">
+					<div >
+						<ul class="cantidades-usuario">
 							<li>
 								<%= user.products.length %> productos
 							</li>
